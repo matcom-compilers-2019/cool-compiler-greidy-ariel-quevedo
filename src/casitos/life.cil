@@ -1,0 +1,2158 @@
+Types:
+	Object{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Object:initialize_Object
+	}
+	Int{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Int:initialize_Int
+	}
+	Bool{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Bool:initialize_Bool
+	}
+	IO{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+	}
+	String{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method length:String_length
+		method concat:String_concat
+		method substr:String_substring
+		method initialize_String:initialize_String
+	}
+	Board{
+		attribute rows
+		attribute columns
+		attribute board_size
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method size_of_board:Board_size_of_board
+		method board_init:Board_board_init
+		method initialize_Board:initialize_Board
+	}
+	CellularAutomaton{
+		attribute rows
+		attribute columns
+		attribute board_size
+		attribute population_map
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method size_of_board:Board_size_of_board
+		method board_init:Board_board_init
+		method initialize_Board:initialize_Board
+		method init:CellularAutomaton_init
+		method print:CellularAutomaton_print
+		method num_cells:CellularAutomaton_num_cells
+		method cell:CellularAutomaton_cell
+		method north:CellularAutomaton_north
+		method south:CellularAutomaton_south
+		method east:CellularAutomaton_east
+		method west:CellularAutomaton_west
+		method northwest:CellularAutomaton_northwest
+		method northeast:CellularAutomaton_northeast
+		method southeast:CellularAutomaton_southeast
+		method southwest:CellularAutomaton_southwest
+		method neighbors:CellularAutomaton_neighbors
+		method cell_at_next_evolution:CellularAutomaton_cell_at_next_evolution
+		method evolve:CellularAutomaton_evolve
+		method option:CellularAutomaton_option
+		method prompt:CellularAutomaton_prompt
+		method prompt2:CellularAutomaton_prompt2
+		method initialize_CellularAutomaton:initialize_CellularAutomaton
+	}
+	Main{
+		attribute rows
+		attribute columns
+		attribute board_size
+		attribute population_map
+		attribute cells
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method size_of_board:Board_size_of_board
+		method board_init:Board_board_init
+		method initialize_Board:initialize_Board
+		method init:CellularAutomaton_init
+		method print:CellularAutomaton_print
+		method num_cells:CellularAutomaton_num_cells
+		method cell:CellularAutomaton_cell
+		method north:CellularAutomaton_north
+		method south:CellularAutomaton_south
+		method east:CellularAutomaton_east
+		method west:CellularAutomaton_west
+		method northwest:CellularAutomaton_northwest
+		method northeast:CellularAutomaton_northeast
+		method southeast:CellularAutomaton_southeast
+		method southwest:CellularAutomaton_southwest
+		method neighbors:CellularAutomaton_neighbors
+		method cell_at_next_evolution:CellularAutomaton_cell_at_next_evolution
+		method evolve:CellularAutomaton_evolve
+		method option:CellularAutomaton_option
+		method prompt:CellularAutomaton_prompt
+		method prompt2:CellularAutomaton_prompt2
+		method initialize_CellularAutomaton:initialize_CellularAutomaton
+		method main:Main_main
+		method initialize_Main:initialize_Main
+	}
+Data:
+	_vacio="vacio"
+	x_76="
+"
+	x_90="
+"
+	x_98="
+"
+	x_110=" "
+	x_125=" "
+	x_137=" "
+	x_154=" "
+	x_164=" "
+	x_171=" "
+	x_184=" "
+	x_191=" "
+	x_204=" "
+	x_215=" "
+	x_228=" "
+	x_239=" "
+	x_252=" "
+	x_259=" "
+	x_270="X"
+	x_278="X"
+	x_287="X"
+	x_296="X"
+	x_305="X"
+	x_314="X"
+	x_323="X"
+	x_332="X"
+	x_344="X"
+	x_352="X"
+	x_355="X"
+	x_357="-"
+	x_360="-"
+	x_386="
+Please chose a number:
+"
+	x_390="	1: A cross
+"
+	x_394="	2: A slash from the upper left to lower right
+"
+	x_398="	3: A slash from the upper right to lower left
+"
+	x_402="	4: An X
+"
+	x_406="	5: A greater than sign 
+"
+	x_410="	6: A less than sign
+"
+	x_414="	7: Two greater than signs
+"
+	x_418="	8: Two less than signs
+"
+	x_422="	9: A 'V'
+"
+	x_426="	10: An inverse 'V'
+"
+	x_430="	11: Numbers 9 and 10 combined
+"
+	x_434="	12: A full grid
+"
+	x_438="	13: A 'T'
+"
+	x_442="	14: A plus '+'
+"
+	x_446="	15: A 'W'
+"
+	x_450="	16: An 'M'
+"
+	x_454="	17: An 'E'
+"
+	x_458="	18: A '3'
+"
+	x_462="	19: An 'O'
+"
+	x_466="	20: An '8'
+"
+	x_470="	21: An 'S'
+"
+	x_474="Your choice => "
+	x_480="
+"
+	x_484=" XX  XXXX XXXX  XX  "
+	x_488="    X   X   X   X   X    "
+	x_492="X     X     X     X     X"
+	x_496="X   X X X   X   X X X   X"
+	x_500="X     X     X   X   X    "
+	x_504="    X   X   X     X     X"
+	x_508="X  X  X  XX  X      "
+	x_512=" X  XX  X  X  X     "
+	x_516="X   X X X   X  "
+	x_520="  X   X X X   X"
+	x_524="X X X X X X X X"
+	x_528="XXXXXXXXXXXXXXXXXXXXXXXXX"
+	x_532="XXXXX  X    X    X    X  "
+	x_536="  X    X  XXXXX  X    X  "
+	x_540="X     X X X X   X X  "
+	x_544="  X X   X X X X     X"
+	x_548="XXXXX   X   XXXXX   X   XXXX"
+	x_552="XXX    X   X  X    X   XXXX "
+	x_556=" XX X  XX  X XX "
+	x_560=" XX X  XX  X XX X  XX  X XX "
+	x_564=" XXXX   X    XX    X   XXXX "
+	x_566="                         "
+	x_592="Would you like to continue with the next generation? 
+"
+	x_596="Please use lowercase y or n for your answer [y]: "
+	x_602="
+"
+	x_604="n"
+	x_613="
+
+"
+	x_617="Would you like to choose a background pattern? 
+"
+	x_621="Please use lowercase y or n for your answer [n]: "
+	x_625="y"
+	x_636="Welcome to the Game of Life.
+"
+	x_640="There are many initial states to choose from. 
+"
+Code:
+	initialize_Object{
+		Arg instance
+	}
+	initialize_Int{
+		Arg instance
+	}
+	initialize_Bool{
+		Arg instance
+	}
+	initialize_IO{
+		Arg instance
+	}
+	initialize_String{
+		Arg instance
+	}
+	Object_copy{
+		Arg to_copy
+		Local isvoid
+		Local save_copy
+		save_copy = Copy to_copy
+	}
+	Object_abort{
+		Arg self_Object
+		Local isvoid
+		halt
+	}
+	Object_type_name{
+		Arg self_Object
+		Local name
+		Local type_name_ref
+		Local isvoid
+		name = Typeof self_Object
+		type_name_ref = Type_Name name
+	}
+	IO_out_string{
+		Arg out_string
+		Arg self_IO
+		Local isvoid
+		Print out_string
+		out_string = self_IO
+	}
+	IO_out_int{
+		Arg out_int
+		Arg self_IO
+		Local isvoid
+		Print out_int
+		out_int = self_IO
+	}
+	IO_in_string{
+		Arg self_IO
+		Local isvoid
+		Local x_in_string
+		x_in_string = Read
+	}
+	IO_in_int{
+		Arg self_IO
+		Local x_in_int
+		Local isvoid
+		x_in_int = Read
+	}
+	String_length{
+		Arg x_str
+		Local x_str_length
+		Local isvoid
+		x_str_length = Length x_str
+	}
+	String_concat{
+		Arg self_String
+		Arg x_str1
+		Local x_str_concat
+		Local isvoid
+		x_str_concat = Concat x_str1 self_String
+	}
+	String_substring{
+		Arg self_String
+		Arg x_j
+		Arg x_i
+		Local x_sub_str
+		Local isvoid
+		x_sub_str = Substring self_String x_j x_i
+	}
+	Board_size_of_board{
+		Arg x__3
+		Arg self_Board
+		Local isvoid
+		Local x_4
+		Local x_5
+		Local x_6
+		x_6 = Allocate String
+		SetAttr x_6 0 x__3
+		x_5 = Typeof x_6
+		Param x_6 0
+		x_4 = VCall x_5 length
+	}
+	Board_board_init{
+		Arg x__7
+		Arg self_Board
+		Local isvoid
+		Local x_8
+		Local x_9
+		Local x__10
+		Local x_11
+		Local x_12
+		Local x_13
+		Local x_14
+		Local x_15
+		Local x_16
+		Local x_17
+		Local x_18
+		Local x_19
+		Local x_20
+		Local x_21
+		Local x_22
+		Local x_23
+		Local x_24
+		Local x_25
+		Local x_26
+		Local x_27
+		Local x_28
+		Local x_29
+		Local x_30
+		Local x_31
+		Local x_32
+		Local x_33
+		Local x_34
+		Local x_35
+		Local x_36
+		Local x_37
+		Local x_38
+		Local x_39
+		Local x_40
+		Local x_41
+		Local x_42
+		Local x_43
+		Local x_44
+		Local x_45
+		Local x_46
+		Local x_47
+		Local x_48
+		Local x_49
+		Local x_50
+		Local x_51
+		Local x_52
+		Local x_53
+		Local x_54
+		Local x_55
+		Local x_56
+		Local x_57
+		Local x_58
+		Local x_59
+		Local x_60
+		Local x_61
+		Local x_62
+		Local x_63
+		Local x_64
+		x_9 = x__7
+		Param x_9 0
+		Param self_Board 1
+		x_8 = VCall Board size_of_board
+		x__10 = x_8
+		x_11 = 15
+		x_12 = x__10 == x_11
+		x_63 = x_12
+		If x_63 Goto LABEL10
+		x_13 = 3
+		SetAttr self_Board 0 x_13
+		x_14 = GetAttr self_Board 0
+		x_15 = 5
+		SetAttr self_Board 1 x_15
+		x_16 = GetAttr self_Board 1
+		SetAttr self_Board 2 x__10
+		x_17 = GetAttr self_Board 2
+		x_63 = x_17
+		Goto LABEL11
+		LABEL10:
+		x_18 = 16
+		x_19 = x__10 == x_18
+		x_62 = x_19
+		If x_62 Goto LABEL8
+		x_20 = 4
+		SetAttr self_Board 0 x_20
+		x_21 = GetAttr self_Board 0
+		x_22 = 4
+		SetAttr self_Board 1 x_22
+		x_23 = GetAttr self_Board 1
+		SetAttr self_Board 2 x__10
+		x_24 = GetAttr self_Board 2
+		x_62 = x_24
+		Goto LABEL9
+		LABEL8:
+		x_25 = 20
+		x_26 = x__10 == x_25
+		x_61 = x_26
+		If x_61 Goto LABEL6
+		x_27 = 4
+		SetAttr self_Board 0 x_27
+		x_28 = GetAttr self_Board 0
+		x_29 = 5
+		SetAttr self_Board 1 x_29
+		x_30 = GetAttr self_Board 1
+		SetAttr self_Board 2 x__10
+		x_31 = GetAttr self_Board 2
+		x_61 = x_31
+		Goto LABEL7
+		LABEL6:
+		x_32 = 21
+		x_33 = x__10 == x_32
+		x_60 = x_33
+		If x_60 Goto LABEL4
+		x_34 = 3
+		SetAttr self_Board 0 x_34
+		x_35 = GetAttr self_Board 0
+		x_36 = 7
+		SetAttr self_Board 1 x_36
+		x_37 = GetAttr self_Board 1
+		SetAttr self_Board 2 x__10
+		x_38 = GetAttr self_Board 2
+		x_60 = x_38
+		Goto LABEL5
+		LABEL4:
+		x_39 = 25
+		x_40 = x__10 == x_39
+		x_59 = x_40
+		If x_59 Goto LABEL2
+		x_41 = 5
+		SetAttr self_Board 0 x_41
+		x_42 = GetAttr self_Board 0
+		x_43 = 5
+		SetAttr self_Board 1 x_43
+		x_44 = GetAttr self_Board 1
+		SetAttr self_Board 2 x__10
+		x_45 = GetAttr self_Board 2
+		x_59 = x_45
+		Goto LABEL3
+		LABEL2:
+		x_46 = 28
+		x_47 = x__10 == x_46
+		x_58 = x_47
+		If x_58 Goto LABEL0
+		x_48 = 7
+		SetAttr self_Board 0 x_48
+		x_49 = GetAttr self_Board 0
+		x_50 = 4
+		SetAttr self_Board 1 x_50
+		x_51 = GetAttr self_Board 1
+		SetAttr self_Board 2 x__10
+		x_52 = GetAttr self_Board 2
+		x_58 = x_52
+		Goto LABEL1
+		LABEL0:
+		x_53 = 5
+		SetAttr self_Board 0 x_53
+		x_54 = GetAttr self_Board 0
+		x_55 = 5
+		SetAttr self_Board 1 x_55
+		x_56 = GetAttr self_Board 1
+		SetAttr self_Board 2 x__10
+		x_57 = GetAttr self_Board 2
+		x_58 = x_57
+		LABEL1:
+		x_59 = x_58
+		LABEL3:
+		x_60 = x_59
+		LABEL5:
+		x_61 = x_60
+		LABEL7:
+		x_62 = x_61
+		LABEL9:
+		x_63 = x_62
+		LABEL11:
+		x_64 = self_Board
+	}
+	initialize_Board{
+		Arg self_Board
+		Local isvoid
+		Local x_0
+		Local x_1
+		Local x_2
+		Local return
+		SetAttr self_Board 0 x_0
+		SetAttr self_Board 1 x_1
+		SetAttr self_Board 2 x_2
+		return = self_Board
+	}
+	CellularAutomaton_init{
+		Arg x__65
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_66
+		Local x_67
+		Local x_68
+		Local x_69
+		SetAttr self_CellularAutomaton 3 x__65
+		x_66 = GetAttr self_CellularAutomaton 3
+		x_68 = x__65
+		Param x_68 0
+		Param self_CellularAutomaton 1
+		x_67 = VCall CellularAutomaton board_init
+		x_69 = self_CellularAutomaton
+	}
+	CellularAutomaton_print{
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_70
+		Local x__71
+		Local x_72
+		Local x__73
+		Local x_74
+		Local x_75
+		Local x_77
+		Local x_78
+		Local x_79
+		Local x_80
+		Local x_82
+		Local x_81
+		Local x_83
+		Local x_84
+		Local x_85
+		Local x_86
+		Local x_87
+		Local x_88
+		Local x_89
+		Local x_91
+		Local x_92
+		Local x_93
+		Local x__71
+		Local x_95
+		Local x_96
+		Local x_97
+		Local x_99
+		Local x_100
+		x_70 = 0
+		x__71 = x_70
+		x_72 = GetAttr self_CellularAutomaton 2
+		x__73 = x_72
+		x_77 = Load x_76 -> 
+
+		x_75 = x_77
+		Param x_75 0
+		Param self_CellularAutomaton 1
+		x_74 = VCall CellularAutomaton out_string
+		LABEL12:
+		x_78 = x__71 < x__73
+		x_95 = x_78
+		If x_95 Goto LABEL13
+		x_81 = GetAttr self_CellularAutomaton 3
+		x_84 = Allocate String
+		SetAttr x_84 0 x_81
+		x_83 = Typeof x_84
+		x_85 = x__71
+		x_87 = GetAttr self_CellularAutomaton 1
+		x_86 = x_87
+		Param x_85 0
+		Param x_86 1
+		Param x_84 2
+		x_82 = VCall x_83 substr
+		x_80 = x_82
+		Param x_80 0
+		Param self_CellularAutomaton 1
+		x_79 = VCall CellularAutomaton out_string
+		x_91 = Load x_90 -> 
+
+		x_89 = x_91
+		Param x_89 0
+		Param self_CellularAutomaton 1
+		x_88 = VCall CellularAutomaton out_string
+		x_92 = GetAttr self_CellularAutomaton 1
+		x_93 = x__71 + x_92
+		x__71 = x_93
+		Goto LABEL12
+		LABEL13:
+		x_99 = Load x_98 -> 
+
+		x_97 = x_99
+		Param x_97 0
+		Param self_CellularAutomaton 1
+		x_96 = VCall CellularAutomaton out_string
+		x_100 = self_CellularAutomaton
+	}
+	CellularAutomaton_num_cells{
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_102
+		Local x_101
+		Local x_103
+		Local x_104
+		x_101 = GetAttr self_CellularAutomaton 3
+		x_104 = Allocate String
+		SetAttr x_104 0 x_101
+		x_103 = Typeof x_104
+		Param x_104 0
+		x_102 = VCall x_103 length
+	}
+	CellularAutomaton_cell{
+		Arg x__105
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_106
+		Local x_107
+		Local x_108
+		Local x_109
+		Local x_111
+		Local x_113
+		Local x_112
+		Local x_114
+		Local x_115
+		Local x_116
+		Local x_117
+		Local x_118
+		Local x_119
+		x_106 = GetAttr self_CellularAutomaton 2
+		x_107 = 1
+		x_108 = x_106 - x_107
+		x_109 = x_108 < x__105
+		x_119 = x_109
+		If x_119 Goto LABEL14
+		x_111 = Load x_110 ->  
+		x_119 = x_111
+		Goto LABEL15
+		LABEL14:
+		x_112 = GetAttr self_CellularAutomaton 3
+		x_115 = Allocate String
+		SetAttr x_115 0 x_112
+		x_114 = Typeof x_115
+		x_116 = x__105
+		x_118 = 1
+		x_117 = x_118
+		Param x_116 0
+		Param x_117 1
+		Param x_115 2
+		x_113 = VCall x_114 substr
+		x_119 = x_113
+		LABEL15:
+	}
+	CellularAutomaton_north{
+		Arg x__120
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_121
+		Local x_122
+		Local x_123
+		Local x_124
+		Local x_126
+		Local x_127
+		Local x_128
+		Local x_129
+		Local x_130
+		Local x_131
+		x_121 = GetAttr self_CellularAutomaton 1
+		x_122 = x__120 - x_121
+		x_123 = 0
+		x_124 = x_122 < x_123
+		x_131 = x_124
+		If x_131 Goto LABEL16
+		x_126 = Load x_125 ->  
+		x_131 = x_126
+		Goto LABEL17
+		LABEL16:
+		x_129 = GetAttr self_CellularAutomaton 1
+		x_130 = x__120 - x_129
+		x_128 = x_130
+		Param x_128 0
+		Param self_CellularAutomaton 1
+		x_127 = VCall CellularAutomaton cell
+		x_131 = x_127
+		LABEL17:
+	}
+	CellularAutomaton_south{
+		Arg x__132
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_133
+		Local x_134
+		Local x_135
+		Local x_136
+		Local x_138
+		Local x_139
+		Local x_140
+		Local x_141
+		Local x_142
+		Local x_143
+		x_133 = GetAttr self_CellularAutomaton 2
+		x_134 = GetAttr self_CellularAutomaton 1
+		x_135 = x__132 + x_134
+		x_136 = x_133 < x_135
+		x_143 = x_136
+		If x_143 Goto LABEL18
+		x_138 = Load x_137 ->  
+		x_143 = x_138
+		Goto LABEL19
+		LABEL18:
+		x_141 = GetAttr self_CellularAutomaton 1
+		x_142 = x__132 + x_141
+		x_140 = x_142
+		Param x_140 0
+		Param self_CellularAutomaton 1
+		x_139 = VCall CellularAutomaton cell
+		x_143 = x_139
+		LABEL19:
+	}
+	CellularAutomaton_east{
+		Arg x__144
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_145
+		Local x_146
+		Local x_147
+		Local x_148
+		Local x_149
+		Local x_150
+		Local x_151
+		Local x_152
+		Local x_153
+		Local x_155
+		Local x_156
+		Local x_157
+		Local x_158
+		Local x_159
+		Local x_160
+		x_145 = 1
+		x_146 = x__144 + x_145
+		x_147 = GetAttr self_CellularAutomaton 1
+		x_148 = x_146 / x_147
+		x_149 = GetAttr self_CellularAutomaton 1
+		x_150 = x_148 * x_149
+		x_151 = 1
+		x_152 = x__144 + x_151
+		x_153 = x_150 == x_152
+		x_160 = x_153
+		If x_160 Goto LABEL20
+		x_155 = Load x_154 ->  
+		x_160 = x_155
+		Goto LABEL21
+		LABEL20:
+		x_158 = 1
+		x_159 = x__144 + x_158
+		x_157 = x_159
+		Param x_157 0
+		Param self_CellularAutomaton 1
+		x_156 = VCall CellularAutomaton cell
+		x_160 = x_156
+		LABEL21:
+	}
+	CellularAutomaton_west{
+		Arg x__161
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_162
+		Local x_163
+		Local x_165
+		Local x_166
+		Local x_167
+		Local x_168
+		Local x_169
+		Local x_170
+		Local x_172
+		Local x_173
+		Local x_174
+		Local x_175
+		Local x_176
+		Local x_177
+		Local x_178
+		x_162 = 0
+		x_163 = x__161 == x_162
+		x_178 = x_163
+		If x_178 Goto LABEL24
+		x_165 = Load x_164 ->  
+		x_178 = x_165
+		Goto LABEL25
+		LABEL24:
+		x_166 = GetAttr self_CellularAutomaton 1
+		x_167 = x__161 / x_166
+		x_168 = GetAttr self_CellularAutomaton 1
+		x_169 = x_167 * x_168
+		x_170 = x_169 == x__161
+		x_177 = x_170
+		If x_177 Goto LABEL22
+		x_172 = Load x_171 ->  
+		x_177 = x_172
+		Goto LABEL23
+		LABEL22:
+		x_175 = 1
+		x_176 = x__161 - x_175
+		x_174 = x_176
+		Param x_174 0
+		Param self_CellularAutomaton 1
+		x_173 = VCall CellularAutomaton cell
+		x_177 = x_173
+		LABEL23:
+		x_178 = x_177
+		LABEL25:
+	}
+	CellularAutomaton_northwest{
+		Arg x__179
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_180
+		Local x_181
+		Local x_182
+		Local x_183
+		Local x_185
+		Local x_186
+		Local x_187
+		Local x_188
+		Local x_189
+		Local x_190
+		Local x_192
+		Local x_193
+		Local x_194
+		Local x_195
+		Local x_196
+		Local x_197
+		Local x_198
+		x_180 = GetAttr self_CellularAutomaton 1
+		x_181 = x__179 - x_180
+		x_182 = 0
+		x_183 = x_181 < x_182
+		x_198 = x_183
+		If x_198 Goto LABEL28
+		x_185 = Load x_184 ->  
+		x_198 = x_185
+		Goto LABEL29
+		LABEL28:
+		x_186 = GetAttr self_CellularAutomaton 1
+		x_187 = x__179 / x_186
+		x_188 = GetAttr self_CellularAutomaton 1
+		x_189 = x_187 * x_188
+		x_190 = x_189 == x__179
+		x_197 = x_190
+		If x_197 Goto LABEL26
+		x_192 = Load x_191 ->  
+		x_197 = x_192
+		Goto LABEL27
+		LABEL26:
+		x_195 = 1
+		x_196 = x__179 - x_195
+		x_194 = x_196
+		Param x_194 0
+		Param self_CellularAutomaton 1
+		x_193 = VCall CellularAutomaton north
+		x_197 = x_193
+		LABEL27:
+		x_198 = x_197
+		LABEL29:
+	}
+	CellularAutomaton_northeast{
+		Arg x__199
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_200
+		Local x_201
+		Local x_202
+		Local x_203
+		Local x_205
+		Local x_206
+		Local x_207
+		Local x_208
+		Local x_209
+		Local x_210
+		Local x_211
+		Local x_212
+		Local x_213
+		Local x_214
+		Local x_216
+		Local x_217
+		Local x_218
+		Local x_219
+		Local x_220
+		Local x_221
+		Local x_222
+		x_200 = GetAttr self_CellularAutomaton 1
+		x_201 = x__199 - x_200
+		x_202 = 0
+		x_203 = x_201 < x_202
+		x_222 = x_203
+		If x_222 Goto LABEL32
+		x_205 = Load x_204 ->  
+		x_222 = x_205
+		Goto LABEL33
+		LABEL32:
+		x_206 = 1
+		x_207 = x__199 + x_206
+		x_208 = GetAttr self_CellularAutomaton 1
+		x_209 = x_207 / x_208
+		x_210 = GetAttr self_CellularAutomaton 1
+		x_211 = x_209 * x_210
+		x_212 = 1
+		x_213 = x__199 + x_212
+		x_214 = x_211 == x_213
+		x_221 = x_214
+		If x_221 Goto LABEL30
+		x_216 = Load x_215 ->  
+		x_221 = x_216
+		Goto LABEL31
+		LABEL30:
+		x_219 = 1
+		x_220 = x__199 + x_219
+		x_218 = x_220
+		Param x_218 0
+		Param self_CellularAutomaton 1
+		x_217 = VCall CellularAutomaton north
+		x_221 = x_217
+		LABEL31:
+		x_222 = x_221
+		LABEL33:
+	}
+	CellularAutomaton_southeast{
+		Arg x__223
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_224
+		Local x_225
+		Local x_226
+		Local x_227
+		Local x_229
+		Local x_230
+		Local x_231
+		Local x_232
+		Local x_233
+		Local x_234
+		Local x_235
+		Local x_236
+		Local x_237
+		Local x_238
+		Local x_240
+		Local x_241
+		Local x_242
+		Local x_243
+		Local x_244
+		Local x_245
+		Local x_246
+		x_224 = GetAttr self_CellularAutomaton 2
+		x_225 = GetAttr self_CellularAutomaton 1
+		x_226 = x__223 + x_225
+		x_227 = x_224 < x_226
+		x_246 = x_227
+		If x_246 Goto LABEL36
+		x_229 = Load x_228 ->  
+		x_246 = x_229
+		Goto LABEL37
+		LABEL36:
+		x_230 = 1
+		x_231 = x__223 + x_230
+		x_232 = GetAttr self_CellularAutomaton 1
+		x_233 = x_231 / x_232
+		x_234 = GetAttr self_CellularAutomaton 1
+		x_235 = x_233 * x_234
+		x_236 = 1
+		x_237 = x__223 + x_236
+		x_238 = x_235 == x_237
+		x_245 = x_238
+		If x_245 Goto LABEL34
+		x_240 = Load x_239 ->  
+		x_245 = x_240
+		Goto LABEL35
+		LABEL34:
+		x_243 = 1
+		x_244 = x__223 + x_243
+		x_242 = x_244
+		Param x_242 0
+		Param self_CellularAutomaton 1
+		x_241 = VCall CellularAutomaton south
+		x_245 = x_241
+		LABEL35:
+		x_246 = x_245
+		LABEL37:
+	}
+	CellularAutomaton_southwest{
+		Arg x__247
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_248
+		Local x_249
+		Local x_250
+		Local x_251
+		Local x_253
+		Local x_254
+		Local x_255
+		Local x_256
+		Local x_257
+		Local x_258
+		Local x_260
+		Local x_261
+		Local x_262
+		Local x_263
+		Local x_264
+		Local x_265
+		Local x_266
+		x_248 = GetAttr self_CellularAutomaton 2
+		x_249 = GetAttr self_CellularAutomaton 1
+		x_250 = x__247 + x_249
+		x_251 = x_248 < x_250
+		x_266 = x_251
+		If x_266 Goto LABEL40
+		x_253 = Load x_252 ->  
+		x_266 = x_253
+		Goto LABEL41
+		LABEL40:
+		x_254 = GetAttr self_CellularAutomaton 1
+		x_255 = x__247 / x_254
+		x_256 = GetAttr self_CellularAutomaton 1
+		x_257 = x_255 * x_256
+		x_258 = x_257 == x__247
+		x_265 = x_258
+		If x_265 Goto LABEL38
+		x_260 = Load x_259 ->  
+		x_265 = x_260
+		Goto LABEL39
+		LABEL38:
+		x_263 = 1
+		x_264 = x__247 - x_263
+		x_262 = x_264
+		Param x_262 0
+		Param self_CellularAutomaton 1
+		x_261 = VCall CellularAutomaton south
+		x_265 = x_261
+		LABEL39:
+		x_266 = x_265
+		LABEL41:
+	}
+	CellularAutomaton_neighbors{
+		Arg x__267
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_268
+		Local x_269
+		Local x_271
+		Local x_272
+		Local x_273
+		Local x_274
+		Local x_275
+		Local x_276
+		Local x_277
+		Local x_279
+		Local x_280
+		Local x_281
+		Local x_282
+		Local x_283
+		Local x_284
+		Local x_285
+		Local x_286
+		Local x_288
+		Local x_289
+		Local x_290
+		Local x_291
+		Local x_292
+		Local x_293
+		Local x_294
+		Local x_295
+		Local x_297
+		Local x_298
+		Local x_299
+		Local x_300
+		Local x_301
+		Local x_302
+		Local x_303
+		Local x_304
+		Local x_306
+		Local x_307
+		Local x_308
+		Local x_309
+		Local x_310
+		Local x_311
+		Local x_312
+		Local x_313
+		Local x_315
+		Local x_316
+		Local x_317
+		Local x_318
+		Local x_319
+		Local x_320
+		Local x_321
+		Local x_322
+		Local x_324
+		Local x_325
+		Local x_326
+		Local x_327
+		Local x_328
+		Local x_329
+		Local x_330
+		Local x_331
+		Local x_333
+		Local x_334
+		Local x_335
+		Local x_336
+		Local x_337
+		Local x_338
+		x_269 = x__267
+		Param x_269 0
+		Param self_CellularAutomaton 1
+		x_268 = VCall CellularAutomaton north
+		x_271 = Load x_270 -> X
+		x_272 = x_268 =String= x_271
+		x_275 = x_272
+		If x_275 Goto LABEL42
+		x_273 = 1
+		x_275 = x_273
+		Goto LABEL43
+		LABEL42:
+		x_274 = 0
+		x_275 = x_274
+		LABEL43:
+		x_277 = x__267
+		Param x_277 0
+		Param self_CellularAutomaton 1
+		x_276 = VCall CellularAutomaton south
+		x_279 = Load x_278 -> X
+		x_280 = x_276 =String= x_279
+		x_283 = x_280
+		If x_283 Goto LABEL44
+		x_281 = 1
+		x_283 = x_281
+		Goto LABEL45
+		LABEL44:
+		x_282 = 0
+		x_283 = x_282
+		LABEL45:
+		x_284 = x_275 + x_283
+		x_286 = x__267
+		Param x_286 0
+		Param self_CellularAutomaton 1
+		x_285 = VCall CellularAutomaton east
+		x_288 = Load x_287 -> X
+		x_289 = x_285 =String= x_288
+		x_292 = x_289
+		If x_292 Goto LABEL46
+		x_290 = 1
+		x_292 = x_290
+		Goto LABEL47
+		LABEL46:
+		x_291 = 0
+		x_292 = x_291
+		LABEL47:
+		x_293 = x_284 + x_292
+		x_295 = x__267
+		Param x_295 0
+		Param self_CellularAutomaton 1
+		x_294 = VCall CellularAutomaton west
+		x_297 = Load x_296 -> X
+		x_298 = x_294 =String= x_297
+		x_301 = x_298
+		If x_301 Goto LABEL48
+		x_299 = 1
+		x_301 = x_299
+		Goto LABEL49
+		LABEL48:
+		x_300 = 0
+		x_301 = x_300
+		LABEL49:
+		x_302 = x_293 + x_301
+		x_304 = x__267
+		Param x_304 0
+		Param self_CellularAutomaton 1
+		x_303 = VCall CellularAutomaton northeast
+		x_306 = Load x_305 -> X
+		x_307 = x_303 =String= x_306
+		x_310 = x_307
+		If x_310 Goto LABEL50
+		x_308 = 1
+		x_310 = x_308
+		Goto LABEL51
+		LABEL50:
+		x_309 = 0
+		x_310 = x_309
+		LABEL51:
+		x_311 = x_302 + x_310
+		x_313 = x__267
+		Param x_313 0
+		Param self_CellularAutomaton 1
+		x_312 = VCall CellularAutomaton northwest
+		x_315 = Load x_314 -> X
+		x_316 = x_312 =String= x_315
+		x_319 = x_316
+		If x_319 Goto LABEL52
+		x_317 = 1
+		x_319 = x_317
+		Goto LABEL53
+		LABEL52:
+		x_318 = 0
+		x_319 = x_318
+		LABEL53:
+		x_320 = x_311 + x_319
+		x_322 = x__267
+		Param x_322 0
+		Param self_CellularAutomaton 1
+		x_321 = VCall CellularAutomaton southeast
+		x_324 = Load x_323 -> X
+		x_325 = x_321 =String= x_324
+		x_328 = x_325
+		If x_328 Goto LABEL54
+		x_326 = 1
+		x_328 = x_326
+		Goto LABEL55
+		LABEL54:
+		x_327 = 0
+		x_328 = x_327
+		LABEL55:
+		x_329 = x_320 + x_328
+		x_331 = x__267
+		Param x_331 0
+		Param self_CellularAutomaton 1
+		x_330 = VCall CellularAutomaton southwest
+		x_333 = Load x_332 -> X
+		x_334 = x_330 =String= x_333
+		x_337 = x_334
+		If x_337 Goto LABEL56
+		x_335 = 1
+		x_337 = x_335
+		Goto LABEL57
+		LABEL56:
+		x_336 = 0
+		x_337 = x_336
+		LABEL57:
+		x_338 = x_329 + x_337
+	}
+	CellularAutomaton_cell_at_next_evolution{
+		Arg x__339
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_340
+		Local x_341
+		Local x_342
+		Local x_343
+		Local x_345
+		Local x_346
+		Local x_347
+		Local x_348
+		Local x_349
+		Local x_350
+		Local x_351
+		Local x_353
+		Local x_354
+		Local x_356
+		Local x_358
+		Local x_359
+		Local x_361
+		Local x_362
+		Local x_363
+		x_341 = x__339
+		Param x_341 0
+		Param self_CellularAutomaton 1
+		x_340 = VCall CellularAutomaton neighbors
+		x_342 = 3
+		x_343 = x_340 == x_342
+		x_363 = x_343
+		If x_363 Goto LABEL62
+		x_345 = Load x_344 -> X
+		x_363 = x_345
+		Goto LABEL63
+		LABEL62:
+		x_347 = x__339
+		Param x_347 0
+		Param self_CellularAutomaton 1
+		x_346 = VCall CellularAutomaton neighbors
+		x_348 = 2
+		x_349 = x_346 == x_348
+		x_362 = x_349
+		If x_362 Goto LABEL60
+		x_351 = x__339
+		Param x_351 0
+		Param self_CellularAutomaton 1
+		x_350 = VCall CellularAutomaton cell
+		x_353 = Load x_352 -> X
+		x_354 = x_350 =String= x_353
+		x_359 = x_354
+		If x_359 Goto LABEL58
+		x_356 = Load x_355 -> X
+		x_359 = x_356
+		Goto LABEL59
+		LABEL58:
+		x_358 = Load x_357 -> -
+		x_359 = x_358
+		LABEL59:
+		x_362 = x_359
+		Goto LABEL61
+		LABEL60:
+		x_361 = Load x_360 -> -
+		x_362 = x_361
+		LABEL61:
+		x_363 = x_362
+		LABEL63:
+	}
+	CellularAutomaton_evolve{
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x_364
+		Local x__365
+		Local x_366
+		Local x__367
+		Local x__368
+		Local x_369
+		Local x_370
+		Local x_371
+		Local x_372
+		Local x_373
+		Local x_374
+		Local x_375
+		Local x__368
+		Local x_377
+		Local x_378
+		Local x__365
+		Local x_380
+		Local x_381
+		Local x_382
+		x_364 = 0
+		x__365 = x_364
+		Param self_CellularAutomaton 0
+		x_366 = VCall CellularAutomaton num_cells
+		x__367 = x_366
+		x__368 = Load _vacio -> vacio
+		LABEL64:
+		x_369 = x__365 < x__367
+		x_380 = x_369
+		If x_380 Goto LABEL65
+		x_372 = Allocate String
+		SetAttr x_372 0 x__368
+		x_371 = Typeof x_372
+		x_375 = x__365
+		Param x_375 0
+		Param self_CellularAutomaton 1
+		x_374 = VCall CellularAutomaton cell_at_next_evolution
+		x_373 = x_374
+		Param x_373 0
+		Param x_372 1
+		x_370 = VCall x_371 concat
+		x__368 = x_370
+		x_377 = 1
+		x_378 = x__365 + x_377
+		x__365 = x_378
+		Goto LABEL64
+		LABEL65:
+		SetAttr self_CellularAutomaton 3 x__368
+		x_381 = GetAttr self_CellularAutomaton 3
+		x_382 = self_CellularAutomaton
+	}
+	CellularAutomaton_option{
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x__383
+		Local x_384
+		Local x_385
+		Local x_387
+		Local x_388
+		Local x_389
+		Local x_391
+		Local x_392
+		Local x_393
+		Local x_395
+		Local x_396
+		Local x_397
+		Local x_399
+		Local x_400
+		Local x_401
+		Local x_403
+		Local x_404
+		Local x_405
+		Local x_407
+		Local x_408
+		Local x_409
+		Local x_411
+		Local x_412
+		Local x_413
+		Local x_415
+		Local x_416
+		Local x_417
+		Local x_419
+		Local x_420
+		Local x_421
+		Local x_423
+		Local x_424
+		Local x_425
+		Local x_427
+		Local x_428
+		Local x_429
+		Local x_431
+		Local x_432
+		Local x_433
+		Local x_435
+		Local x_436
+		Local x_437
+		Local x_439
+		Local x_440
+		Local x_441
+		Local x_443
+		Local x_444
+		Local x_445
+		Local x_447
+		Local x_448
+		Local x_449
+		Local x_451
+		Local x_452
+		Local x_453
+		Local x_455
+		Local x_456
+		Local x_457
+		Local x_459
+		Local x_460
+		Local x_461
+		Local x_463
+		Local x_464
+		Local x_465
+		Local x_467
+		Local x_468
+		Local x_469
+		Local x_471
+		Local x_472
+		Local x_473
+		Local x_475
+		Local x_476
+		Local x__383
+		Local x_478
+		Local x_479
+		Local x_481
+		Local x_482
+		Local x_483
+		Local x_485
+		Local x_486
+		Local x_487
+		Local x_489
+		Local x_490
+		Local x_491
+		Local x_493
+		Local x_494
+		Local x_495
+		Local x_497
+		Local x_498
+		Local x_499
+		Local x_501
+		Local x_502
+		Local x_503
+		Local x_505
+		Local x_506
+		Local x_507
+		Local x_509
+		Local x_510
+		Local x_511
+		Local x_513
+		Local x_514
+		Local x_515
+		Local x_517
+		Local x_518
+		Local x_519
+		Local x_521
+		Local x_522
+		Local x_523
+		Local x_525
+		Local x_526
+		Local x_527
+		Local x_529
+		Local x_530
+		Local x_531
+		Local x_533
+		Local x_534
+		Local x_535
+		Local x_537
+		Local x_538
+		Local x_539
+		Local x_541
+		Local x_542
+		Local x_543
+		Local x_545
+		Local x_546
+		Local x_547
+		Local x_549
+		Local x_550
+		Local x_551
+		Local x_553
+		Local x_554
+		Local x_555
+		Local x_557
+		Local x_558
+		Local x_559
+		Local x_561
+		Local x_562
+		Local x_563
+		Local x_565
+		Local x_567
+		Local x_568
+		Local x_569
+		Local x_570
+		Local x_571
+		Local x_572
+		Local x_573
+		Local x_574
+		Local x_575
+		Local x_576
+		Local x_577
+		Local x_578
+		Local x_579
+		Local x_580
+		Local x_581
+		Local x_582
+		Local x_583
+		Local x_584
+		Local x_585
+		Local x_586
+		Local x_587
+		Local x_588
+		x__383 = 0
+		x_387 = Load x_386 -> 
+Please chose a number:
+
+		x_385 = x_387
+		Param x_385 0
+		Param self_CellularAutomaton 1
+		x_384 = VCall CellularAutomaton out_string
+		x_391 = Load x_390 -> 	1: A cross
+
+		x_389 = x_391
+		Param x_389 0
+		Param self_CellularAutomaton 1
+		x_388 = VCall CellularAutomaton out_string
+		x_395 = Load x_394 -> 	2: A slash from the upper left to lower right
+
+		x_393 = x_395
+		Param x_393 0
+		Param self_CellularAutomaton 1
+		x_392 = VCall CellularAutomaton out_string
+		x_399 = Load x_398 -> 	3: A slash from the upper right to lower left
+
+		x_397 = x_399
+		Param x_397 0
+		Param self_CellularAutomaton 1
+		x_396 = VCall CellularAutomaton out_string
+		x_403 = Load x_402 -> 	4: An X
+
+		x_401 = x_403
+		Param x_401 0
+		Param self_CellularAutomaton 1
+		x_400 = VCall CellularAutomaton out_string
+		x_407 = Load x_406 -> 	5: A greater than sign 
+
+		x_405 = x_407
+		Param x_405 0
+		Param self_CellularAutomaton 1
+		x_404 = VCall CellularAutomaton out_string
+		x_411 = Load x_410 -> 	6: A less than sign
+
+		x_409 = x_411
+		Param x_409 0
+		Param self_CellularAutomaton 1
+		x_408 = VCall CellularAutomaton out_string
+		x_415 = Load x_414 -> 	7: Two greater than signs
+
+		x_413 = x_415
+		Param x_413 0
+		Param self_CellularAutomaton 1
+		x_412 = VCall CellularAutomaton out_string
+		x_419 = Load x_418 -> 	8: Two less than signs
+
+		x_417 = x_419
+		Param x_417 0
+		Param self_CellularAutomaton 1
+		x_416 = VCall CellularAutomaton out_string
+		x_423 = Load x_422 -> 	9: A 'V'
+
+		x_421 = x_423
+		Param x_421 0
+		Param self_CellularAutomaton 1
+		x_420 = VCall CellularAutomaton out_string
+		x_427 = Load x_426 -> 	10: An inverse 'V'
+
+		x_425 = x_427
+		Param x_425 0
+		Param self_CellularAutomaton 1
+		x_424 = VCall CellularAutomaton out_string
+		x_431 = Load x_430 -> 	11: Numbers 9 and 10 combined
+
+		x_429 = x_431
+		Param x_429 0
+		Param self_CellularAutomaton 1
+		x_428 = VCall CellularAutomaton out_string
+		x_435 = Load x_434 -> 	12: A full grid
+
+		x_433 = x_435
+		Param x_433 0
+		Param self_CellularAutomaton 1
+		x_432 = VCall CellularAutomaton out_string
+		x_439 = Load x_438 -> 	13: A 'T'
+
+		x_437 = x_439
+		Param x_437 0
+		Param self_CellularAutomaton 1
+		x_436 = VCall CellularAutomaton out_string
+		x_443 = Load x_442 -> 	14: A plus '+'
+
+		x_441 = x_443
+		Param x_441 0
+		Param self_CellularAutomaton 1
+		x_440 = VCall CellularAutomaton out_string
+		x_447 = Load x_446 -> 	15: A 'W'
+
+		x_445 = x_447
+		Param x_445 0
+		Param self_CellularAutomaton 1
+		x_444 = VCall CellularAutomaton out_string
+		x_451 = Load x_450 -> 	16: An 'M'
+
+		x_449 = x_451
+		Param x_449 0
+		Param self_CellularAutomaton 1
+		x_448 = VCall CellularAutomaton out_string
+		x_455 = Load x_454 -> 	17: An 'E'
+
+		x_453 = x_455
+		Param x_453 0
+		Param self_CellularAutomaton 1
+		x_452 = VCall CellularAutomaton out_string
+		x_459 = Load x_458 -> 	18: A '3'
+
+		x_457 = x_459
+		Param x_457 0
+		Param self_CellularAutomaton 1
+		x_456 = VCall CellularAutomaton out_string
+		x_463 = Load x_462 -> 	19: An 'O'
+
+		x_461 = x_463
+		Param x_461 0
+		Param self_CellularAutomaton 1
+		x_460 = VCall CellularAutomaton out_string
+		x_467 = Load x_466 -> 	20: An '8'
+
+		x_465 = x_467
+		Param x_465 0
+		Param self_CellularAutomaton 1
+		x_464 = VCall CellularAutomaton out_string
+		x_471 = Load x_470 -> 	21: An 'S'
+
+		x_469 = x_471
+		Param x_469 0
+		Param self_CellularAutomaton 1
+		x_468 = VCall CellularAutomaton out_string
+		x_475 = Load x_474 -> Your choice => 
+		x_473 = x_475
+		Param x_473 0
+		Param self_CellularAutomaton 1
+		x_472 = VCall CellularAutomaton out_string
+		Param self_CellularAutomaton 0
+		x_476 = VCall CellularAutomaton in_int
+		x__383 = x_476
+		x_481 = Load x_480 -> 
+
+		x_479 = x_481
+		Param x_479 0
+		Param self_CellularAutomaton 1
+		x_478 = VCall CellularAutomaton out_string
+		x_482 = 1
+		x_483 = x__383 == x_482
+		x_588 = x_483
+		If x_588 Goto LABEL106
+		x_485 = Load x_484 ->  XX  XXXX XXXX  XX  
+		x_588 = x_485
+		Goto LABEL107
+		LABEL106:
+		x_486 = 2
+		x_487 = x__383 == x_486
+		x_587 = x_487
+		If x_587 Goto LABEL104
+		x_489 = Load x_488 ->     X   X   X   X   X    
+		x_587 = x_489
+		Goto LABEL105
+		LABEL104:
+		x_490 = 3
+		x_491 = x__383 == x_490
+		x_586 = x_491
+		If x_586 Goto LABEL102
+		x_493 = Load x_492 -> X     X     X     X     X
+		x_586 = x_493
+		Goto LABEL103
+		LABEL102:
+		x_494 = 4
+		x_495 = x__383 == x_494
+		x_585 = x_495
+		If x_585 Goto LABEL100
+		x_497 = Load x_496 -> X   X X X   X   X X X   X
+		x_585 = x_497
+		Goto LABEL101
+		LABEL100:
+		x_498 = 5
+		x_499 = x__383 == x_498
+		x_584 = x_499
+		If x_584 Goto LABEL98
+		x_501 = Load x_500 -> X     X     X   X   X    
+		x_584 = x_501
+		Goto LABEL99
+		LABEL98:
+		x_502 = 6
+		x_503 = x__383 == x_502
+		x_583 = x_503
+		If x_583 Goto LABEL96
+		x_505 = Load x_504 ->     X   X   X     X     X
+		x_583 = x_505
+		Goto LABEL97
+		LABEL96:
+		x_506 = 7
+		x_507 = x__383 == x_506
+		x_582 = x_507
+		If x_582 Goto LABEL94
+		x_509 = Load x_508 -> X  X  X  XX  X      
+		x_582 = x_509
+		Goto LABEL95
+		LABEL94:
+		x_510 = 8
+		x_511 = x__383 == x_510
+		x_581 = x_511
+		If x_581 Goto LABEL92
+		x_513 = Load x_512 ->  X  XX  X  X  X     
+		x_581 = x_513
+		Goto LABEL93
+		LABEL92:
+		x_514 = 9
+		x_515 = x__383 == x_514
+		x_580 = x_515
+		If x_580 Goto LABEL90
+		x_517 = Load x_516 -> X   X X X   X  
+		x_580 = x_517
+		Goto LABEL91
+		LABEL90:
+		x_518 = 10
+		x_519 = x__383 == x_518
+		x_579 = x_519
+		If x_579 Goto LABEL88
+		x_521 = Load x_520 ->   X   X X X   X
+		x_579 = x_521
+		Goto LABEL89
+		LABEL88:
+		x_522 = 11
+		x_523 = x__383 == x_522
+		x_578 = x_523
+		If x_578 Goto LABEL86
+		x_525 = Load x_524 -> X X X X X X X X
+		x_578 = x_525
+		Goto LABEL87
+		LABEL86:
+		x_526 = 12
+		x_527 = x__383 == x_526
+		x_577 = x_527
+		If x_577 Goto LABEL84
+		x_529 = Load x_528 -> XXXXXXXXXXXXXXXXXXXXXXXXX
+		x_577 = x_529
+		Goto LABEL85
+		LABEL84:
+		x_530 = 13
+		x_531 = x__383 == x_530
+		x_576 = x_531
+		If x_576 Goto LABEL82
+		x_533 = Load x_532 -> XXXXX  X    X    X    X  
+		x_576 = x_533
+		Goto LABEL83
+		LABEL82:
+		x_534 = 14
+		x_535 = x__383 == x_534
+		x_575 = x_535
+		If x_575 Goto LABEL80
+		x_537 = Load x_536 ->   X    X  XXXXX  X    X  
+		x_575 = x_537
+		Goto LABEL81
+		LABEL80:
+		x_538 = 15
+		x_539 = x__383 == x_538
+		x_574 = x_539
+		If x_574 Goto LABEL78
+		x_541 = Load x_540 -> X     X X X X   X X  
+		x_574 = x_541
+		Goto LABEL79
+		LABEL78:
+		x_542 = 16
+		x_543 = x__383 == x_542
+		x_573 = x_543
+		If x_573 Goto LABEL76
+		x_545 = Load x_544 ->   X X   X X X X     X
+		x_573 = x_545
+		Goto LABEL77
+		LABEL76:
+		x_546 = 17
+		x_547 = x__383 == x_546
+		x_572 = x_547
+		If x_572 Goto LABEL74
+		x_549 = Load x_548 -> XXXXX   X   XXXXX   X   XXXX
+		x_572 = x_549
+		Goto LABEL75
+		LABEL74:
+		x_550 = 18
+		x_551 = x__383 == x_550
+		x_571 = x_551
+		If x_571 Goto LABEL72
+		x_553 = Load x_552 -> XXX    X   X  X    X   XXXX 
+		x_571 = x_553
+		Goto LABEL73
+		LABEL72:
+		x_554 = 19
+		x_555 = x__383 == x_554
+		x_570 = x_555
+		If x_570 Goto LABEL70
+		x_557 = Load x_556 ->  XX X  XX  X XX 
+		x_570 = x_557
+		Goto LABEL71
+		LABEL70:
+		x_558 = 20
+		x_559 = x__383 == x_558
+		x_569 = x_559
+		If x_569 Goto LABEL68
+		x_561 = Load x_560 ->  XX X  XX  X XX X  XX  X XX 
+		x_569 = x_561
+		Goto LABEL69
+		LABEL68:
+		x_562 = 21
+		x_563 = x__383 == x_562
+		x_568 = x_563
+		If x_568 Goto LABEL66
+		x_565 = Load x_564 ->  XXXX   X    XX    X   XXXX 
+		x_568 = x_565
+		Goto LABEL67
+		LABEL66:
+		x_567 = Load x_566 ->                          
+		x_568 = x_567
+		LABEL67:
+		x_569 = x_568
+		LABEL69:
+		x_570 = x_569
+		LABEL71:
+		x_571 = x_570
+		LABEL73:
+		x_572 = x_571
+		LABEL75:
+		x_573 = x_572
+		LABEL77:
+		x_574 = x_573
+		LABEL79:
+		x_575 = x_574
+		LABEL81:
+		x_576 = x_575
+		LABEL83:
+		x_577 = x_576
+		LABEL85:
+		x_578 = x_577
+		LABEL87:
+		x_579 = x_578
+		LABEL89:
+		x_580 = x_579
+		LABEL91:
+		x_581 = x_580
+		LABEL93:
+		x_582 = x_581
+		LABEL95:
+		x_583 = x_582
+		LABEL97:
+		x_584 = x_583
+		LABEL99:
+		x_585 = x_584
+		LABEL101:
+		x_586 = x_585
+		LABEL103:
+		x_587 = x_586
+		LABEL105:
+		x_588 = x_587
+		LABEL107:
+	}
+	CellularAutomaton_prompt{
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x__589
+		Local x_590
+		Local x_591
+		Local x_593
+		Local x_594
+		Local x_595
+		Local x_597
+		Local x_598
+		Local x__589
+		Local x_600
+		Local x_601
+		Local x_603
+		Local x_605
+		Local x_606
+		Local x_607
+		Local x_608
+		Local x_609
+		x__589 = Load _vacio -> vacio
+		x_593 = Load x_592 -> Would you like to continue with the next generation? 
+
+		x_591 = x_593
+		Param x_591 0
+		Param self_CellularAutomaton 1
+		x_590 = VCall CellularAutomaton out_string
+		x_597 = Load x_596 -> Please use lowercase y or n for your answer [y]: 
+		x_595 = x_597
+		Param x_595 0
+		Param self_CellularAutomaton 1
+		x_594 = VCall CellularAutomaton out_string
+		Param self_CellularAutomaton 0
+		x_598 = VCall CellularAutomaton in_string
+		x__589 = x_598
+		x_603 = Load x_602 -> 
+
+		x_601 = x_603
+		Param x_601 0
+		Param self_CellularAutomaton 1
+		x_600 = VCall CellularAutomaton out_string
+		x_605 = Load x_604 -> n
+		x_606 = x__589 =String= x_605
+		x_609 = x_606
+		If x_609 Goto LABEL108
+		x_607 = 0
+		x_609 = x_607
+		Goto LABEL109
+		LABEL108:
+		x_608 = 1
+		x_609 = x_608
+		LABEL109:
+	}
+	CellularAutomaton_prompt2{
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local x__610
+		Local x_611
+		Local x_612
+		Local x_614
+		Local x_615
+		Local x_616
+		Local x_618
+		Local x_619
+		Local x_620
+		Local x_622
+		Local x_623
+		Local x__610
+		Local x_626
+		Local x_627
+		Local x_628
+		Local x_629
+		Local x_630
+		x__610 = Load _vacio -> vacio
+		x_614 = Load x_613 -> 
+
+
+		x_612 = x_614
+		Param x_612 0
+		Param self_CellularAutomaton 1
+		x_611 = VCall CellularAutomaton out_string
+		x_618 = Load x_617 -> Would you like to choose a background pattern? 
+
+		x_616 = x_618
+		Param x_616 0
+		Param self_CellularAutomaton 1
+		x_615 = VCall CellularAutomaton out_string
+		x_622 = Load x_621 -> Please use lowercase y or n for your answer [n]: 
+		x_620 = x_622
+		Param x_620 0
+		Param self_CellularAutomaton 1
+		x_619 = VCall CellularAutomaton out_string
+		Param self_CellularAutomaton 0
+		x_623 = VCall CellularAutomaton in_string
+		x__610 = x_623
+		x_626 = Load x_625 -> y
+		x_627 = x__610 =String= x_626
+		x_630 = x_627
+		If x_630 Goto LABEL110
+		x_628 = 1
+		x_630 = x_628
+		Goto LABEL111
+		LABEL110:
+		x_629 = 0
+		x_630 = x_629
+		LABEL111:
+	}
+	initialize_CellularAutomaton{
+		Arg self_CellularAutomaton
+		Local isvoid
+		Local return
+		Local x_631
+		Param self_CellularAutomaton 0
+		x_631 = Call initialize_Board
+		SetAttr self_CellularAutomaton 3 isvoid
+		return = self_CellularAutomaton
+	}
+	Main_main{
+		Arg self_Main
+		Local isvoid
+		Local x__632
+		Local x__633
+		Local x_634
+		Local x_635
+		Local x_637
+		Local x_638
+		Local x_639
+		Local x_641
+		Local x_642
+		Local x_643
+		Local x__632
+		Local x_645
+		Local x__633
+		Local x_649
+		Local x_647
+		Local x_648
+		Local x_650
+		Local x_651
+		Local x_652
+		Local x_654
+		Local x_653
+		Local x_655
+		Local x_656
+		Local x_658
+		Local x_657
+		Local x_659
+		Local x_661
+		Local x_660
+		Local x_662
+		Local x_663
+		Local x__632
+		Local x_665
+		Local x_666
+		Local x_667
+		Local x_668
+		Local x_669
+		x__632 = 0
+		x__633 = Load _vacio -> vacio
+		x_637 = Load x_636 -> Welcome to the Game of Life.
+
+		x_635 = x_637
+		Param x_635 0
+		Param self_Main 1
+		x_634 = VCall Main out_string
+		x_641 = Load x_640 -> There are many initial states to choose from. 
+
+		x_639 = x_641
+		Param x_639 0
+		Param self_Main 1
+		x_638 = VCall Main out_string
+		LABEL116:
+		Param self_Main 0
+		x_642 = VCall Main prompt2
+		x_668 = x_642
+		If x_668 Goto LABEL117
+		x_643 = 1
+		x__632 = x_643
+		Param self_Main 0
+		x_645 = VCall Main option
+		x__633 = x_645
+		x_647 = Allocate CellularAutomaton
+		Param x_647 0
+		x_648 = Call initialize_CellularAutomaton
+		x_650 = Typeof x_647
+		x_651 = x__633
+		Param x_651 0
+		Param x_647 1
+		x_649 = VCall x_650 init
+		SetAttr self_Main 4 x_649
+		x_652 = GetAttr self_Main 4
+		x_653 = GetAttr self_Main 4
+		x_655 = Typeof x_653
+		Param x_653 0
+		x_654 = VCall x_655 print
+		LABEL114:
+		x_667 = x__632
+		If x_667 Goto LABEL115
+		Param self_Main 0
+		x_656 = VCall Main prompt
+		x_666 = x_656
+		If x_666 Goto LABEL112
+		x_657 = GetAttr self_Main 4
+		x_659 = Typeof x_657
+		Param x_657 0
+		x_658 = VCall x_659 evolve
+		x_660 = GetAttr self_Main 4
+		x_662 = Typeof x_660
+		Param x_660 0
+		x_661 = VCall x_662 print
+		x_666 = x_661
+		Goto LABEL113
+		LABEL112:
+		x_663 = 0
+		x__632 = x_663
+		x_665 = Allocate Bool
+		SetAttr x_665 0 x__632
+		x_666 = x_665
+		LABEL113:
+		Goto LABEL114
+		LABEL115:
+		Goto LABEL116
+		LABEL117:
+		x_669 = self_Main
+	}
+	initialize_Main{
+		Arg self_Main
+		Local isvoid
+		Local return
+		Local x_670
+		Param self_Main 0
+		x_670 = Call initialize_CellularAutomaton
+		SetAttr self_Main 4 isvoid
+		return = self_Main
+	}
+	main{
+		Local x_672
+		Local x_673
+		Local x_671
+		x_672 = Allocate Main
+		Param x_672 0
+		x_671 = Call initialize_Main
+		Param x_672 0
+		x_673 = Call Main_main
+		halt
+	}

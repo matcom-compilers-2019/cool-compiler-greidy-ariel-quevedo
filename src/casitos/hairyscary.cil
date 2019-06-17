@@ -1,0 +1,543 @@
+Types:
+	Object{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Object:initialize_Object
+	}
+	Int{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Int:initialize_Int
+	}
+	Bool{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Bool:initialize_Bool
+	}
+	IO{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+	}
+	String{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method length:String_length
+		method concat:String_concat
+		method substr:String_substring
+		method initialize_String:initialize_String
+	}
+	Main{
+		attribute a
+		attribute b
+		attribute c
+		attribute d
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Object:initialize_Object
+		method main:Main_main
+		method initialize_Main:initialize_Main
+	}
+	Bazz{
+		attribute h
+		attribute g
+		attribute i
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method printh:Bazz_printh
+		method doh:Bazz_doh
+		method initialize_Bazz:initialize_Bazz
+	}
+	Foo{
+		attribute h
+		attribute g
+		attribute i
+		attribute a
+		attribute b
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method printh:Bazz_printh
+		method doh:Foo_doh
+		method initialize_Bazz:initialize_Bazz
+		method initialize_Foo:initialize_Foo
+	}
+	Razz{
+		attribute h
+		attribute g
+		attribute i
+		attribute a
+		attribute b
+		attribute e
+		attribute f
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method printh:Bazz_printh
+		method doh:Foo_doh
+		method initialize_Bazz:initialize_Bazz
+		method initialize_Foo:initialize_Foo
+		method initialize_Razz:initialize_Razz
+	}
+	Bar{
+		attribute h
+		attribute g
+		attribute i
+		attribute a
+		attribute b
+		attribute e
+		attribute f
+		attribute c
+		attribute d
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method printh:Bazz_printh
+		method doh:Foo_doh
+		method initialize_Bazz:initialize_Bazz
+		method initialize_Foo:initialize_Foo
+		method initialize_Razz:initialize_Razz
+		method initialize_Bar:initialize_Bar
+	}
+Data:
+	_vacio=""
+	x_8="do nothing"
+Code:
+	initialize_Object{
+		Arg instance
+	}
+	initialize_Int{
+		Arg instance
+	}
+	initialize_Bool{
+		Arg instance
+	}
+	initialize_IO{
+		Arg instance
+	}
+	initialize_String{
+		Arg instance
+	}
+	Object_copy{
+		Arg to_copy
+		Local isvoid
+		Local save_copy
+		save_copy = Copy to_copy
+	}
+	Object_abort{
+		Arg self_Object
+		Local isvoid
+		halt
+	}
+	Object_type_name{
+		Arg self_Object
+		Local name
+		Local type_name_ref
+		Local isvoid
+		name = Typeof self_Object
+		type_name_ref = Type_Name name
+	}
+	IO_out_string{
+		Arg out_string
+		Arg self_IO
+		Local isvoid
+		Print out_string
+		out_string = self_IO
+	}
+	IO_out_int{
+		Arg out_int
+		Arg self_IO
+		Local isvoid
+		Print out_int
+		out_int = self_IO
+	}
+	IO_in_string{
+		Arg self_IO
+		Local isvoid
+		Local x_in_string
+		x_in_string = Read
+	}
+	IO_in_int{
+		Arg self_IO
+		Local x_in_int
+		Local isvoid
+		x_in_int = Read
+	}
+	String_length{
+		Arg x_str
+		Local x_str_length
+		Local isvoid
+		x_str_length = Length x_str
+	}
+	String_concat{
+		Arg self_String
+		Arg x_str1
+		Local x_str_concat
+		Local isvoid
+		x_str_concat = Concat x_str1 self_String
+	}
+	String_substring{
+		Arg self_String
+		Arg x_j
+		Arg x_i
+		Local x_sub_str
+		Local isvoid
+		x_sub_str = Substring self_String x_j x_i
+	}
+	Main_main{
+		Arg self_Main
+		Local isvoid
+		Local x_9
+		x_9 = Load x_8 -> do nothing
+	}
+	initialize_Main{
+		Arg self_Main
+		Local isvoid
+		Local x_0
+		Local x_1
+		Local x_2
+		Local x_3
+		Local x_4
+		Local x_5
+		Local x_6
+		Local x_7
+		Local return
+		x_0 = Allocate Bazz
+		Param x_0 0
+		x_1 = Call initialize_Bazz
+		SetAttr self_Main 0 x_0
+		x_2 = Allocate Foo
+		Param x_2 0
+		x_3 = Call initialize_Foo
+		SetAttr self_Main 1 x_2
+		x_4 = Allocate Razz
+		Param x_4 0
+		x_5 = Call initialize_Razz
+		SetAttr self_Main 2 x_4
+		x_6 = Allocate Bar
+		Param x_6 0
+		x_7 = Call initialize_Bar
+		SetAttr self_Main 3 x_6
+		return = self_Main
+	}
+	Bazz_printh{
+		Arg self_Bazz
+		Local isvoid
+		Local x_27
+		Local x_28
+		Local x_29
+		Local x_30
+		x_29 = GetAttr self_Bazz 0
+		x_28 = x_29
+		Param x_28 0
+		Param self_Bazz 1
+		x_27 = VCall Bazz out_int
+		x_30 = 0
+	}
+	Bazz_doh{
+		Arg self_Bazz
+		Local isvoid
+		Local x_31
+		Local x__32
+		Local x_33
+		Local x_34
+		Local x_35
+		Local x_36
+		x_31 = GetAttr self_Bazz 0
+		x__32 = x_31
+		x_33 = GetAttr self_Bazz 0
+		x_34 = 1
+		x_35 = x_33 + x_34
+		SetAttr self_Bazz 0 x_35
+		x_36 = GetAttr self_Bazz 0
+	}
+	initialize_Bazz{
+		Arg self_Bazz
+		Local isvoid
+		Local x_10
+		Local x_12
+		Local x_14
+		Local x_13
+		Local x_11
+		Local x_16
+		Local x_17
+		Local x__15
+		Local x_19
+		Local x_20
+		Local x__18
+		Local x_22
+		Local x_23
+		Local x__21
+		Local x__24
+		Local x_25
+		Local x_26
+		Local return
+		x_10 = 1
+		SetAttr self_Bazz 0 x_10
+		x_11 = self_Bazz
+		x_14 = Typeof x_11
+		x_13 = Type_Name x_14
+		Goto LABEL0
+		LABEL2:
+		x__15 = x_11
+		x_16 = Allocate Foo
+		Param x_16 0
+		x_17 = Call initialize_Foo
+		x_12 = x_16
+		Goto LABEL1
+		LABEL3:
+		x__18 = x_11
+		x_19 = Allocate Bar
+		Param x_19 0
+		x_20 = Call initialize_Bar
+		x_12 = x_19
+		Goto LABEL1
+		LABEL4:
+		x__21 = x_11
+		x_22 = Allocate Razz
+		Param x_22 0
+		x_23 = Call initialize_Razz
+		x_12 = x_22
+		Goto LABEL1
+		LABEL5:
+		x__24 = x_11
+		x_12 = x__24
+		Goto LABEL1
+		LABEL0:
+		Case x_13 Bazz,Razz,Foo,Bar LABEL2,LABEL3,LABEL4,LABEL5
+		LABEL1:
+		SetAttr self_Bazz 1 x_12
+		Param self_Bazz 0
+		x_25 = VCall Bazz printh
+		x_26 = Allocate Int
+		SetAttr x_26 0 x_25
+		SetAttr self_Bazz 2 x_26
+		return = self_Bazz
+	}
+	Foo_doh{
+		Arg self_Foo
+		Local isvoid
+		Local x_59
+		Local x__60
+		Local x_61
+		Local x_62
+		Local x_63
+		Local x_64
+		x_59 = GetAttr self_Foo 0
+		x__60 = x_59
+		x_61 = GetAttr self_Foo 0
+		x_62 = 2
+		x_63 = x_61 + x_62
+		SetAttr self_Foo 0 x_63
+		x_64 = GetAttr self_Foo 0
+	}
+	initialize_Foo{
+		Arg self_Foo
+		Local isvoid
+		Local x_38
+		Local x_40
+		Local x_39
+		Local x_37
+		Local x_42
+		Local x_43
+		Local x__41
+		Local x_45
+		Local x_46
+		Local x__44
+		Local x__47
+		Local x_49
+		Local x_48
+		Local x_50
+		Local x_52
+		Local x_51
+		Local x_53
+		Local x_54
+		Local x_55
+		Local x_56
+		Local x_57
+		Local x_58
+		Local return
+		Local x_65
+		Param self_Foo 0
+		x_65 = Call initialize_Bazz
+		x_37 = self_Foo
+		x_40 = Typeof x_37
+		x_39 = Type_Name x_40
+		Goto LABEL6
+		LABEL8:
+		x__41 = x_37
+		x_42 = Allocate Bar
+		Param x_42 0
+		x_43 = Call initialize_Bar
+		x_38 = x_42
+		Goto LABEL7
+		LABEL9:
+		x__44 = x_37
+		x_45 = Allocate Razz
+		Param x_45 0
+		x_46 = Call initialize_Razz
+		x_38 = x_45
+		Goto LABEL7
+		LABEL10:
+		x__47 = x_37
+		x_38 = x__47
+		Goto LABEL7
+		LABEL6:
+		Case x_39 Razz,Foo,Bar LABEL8,LABEL9,LABEL10
+		LABEL7:
+		SetAttr self_Foo 3 x_38
+		x_48 = GetAttr self_Foo 3
+		x_50 = Typeof x_48
+		Param x_48 0
+		x_49 = VCall x_50 doh
+		x_51 = GetAttr self_Foo 1
+		x_53 = Typeof x_51
+		Param x_51 0
+		x_52 = VCall x_53 doh
+		x_54 = x_49 + x_52
+		Param self_Foo 0
+		x_55 = VCall Foo doh
+		x_56 = x_54 + x_55
+		Param self_Foo 0
+		x_57 = VCall Foo printh
+		x_58 = x_56 + x_57
+		SetAttr self_Foo 4 x_58
+		return = self_Foo
+	}
+	initialize_Razz{
+		Arg self_Razz
+		Local isvoid
+		Local x_67
+		Local x_69
+		Local x_68
+		Local x_66
+		Local x_71
+		Local x_72
+		Local x__70
+		Local x__73
+		Local x_75
+		Local x_74
+		Local x_76
+		Local x_78
+		Local x_77
+		Local x_79
+		Local x_80
+		Local x_82
+		Local x_81
+		Local x_83
+		Local x_84
+		Local x_85
+		Local x_86
+		Local x_87
+		Local x_88
+		Local return
+		Local x_89
+		Param self_Razz 0
+		x_89 = Call initialize_Foo
+		x_66 = self_Razz
+		x_69 = Typeof x_66
+		x_68 = Type_Name x_69
+		Goto LABEL11
+		LABEL13:
+		x__70 = x_66
+		x_71 = Allocate Bar
+		Param x_71 0
+		x_72 = Call initialize_Bar
+		x_67 = x_71
+		Goto LABEL12
+		LABEL14:
+		x__73 = x_66
+		x_67 = x__73
+		Goto LABEL12
+		LABEL11:
+		Case x_68 Razz,Bar LABEL13,LABEL14
+		LABEL12:
+		SetAttr self_Razz 5 x_67
+		x_74 = GetAttr self_Razz 3
+		x_76 = Typeof x_74
+		Param x_74 0
+		x_75 = VCall Bazz doh
+		x_77 = GetAttr self_Razz 1
+		x_79 = Typeof x_77
+		Param x_77 0
+		x_78 = VCall x_79 doh
+		x_80 = x_75 + x_78
+		x_81 = GetAttr self_Razz 5
+		x_83 = Typeof x_81
+		Param x_81 0
+		x_82 = VCall x_83 doh
+		x_84 = x_80 + x_82
+		Param self_Razz 0
+		x_85 = VCall Razz doh
+		x_86 = x_84 + x_85
+		Param self_Razz 0
+		x_87 = VCall Razz printh
+		x_88 = x_86 + x_87
+		SetAttr self_Razz 6 x_88
+		return = self_Razz
+	}
+	initialize_Bar{
+		Arg self_Bar
+		Local isvoid
+		Local x_90
+		Local x_91
+		Local x_92
+		Local return
+		Local x_93
+		Param self_Bar 0
+		x_93 = Call initialize_Razz
+		Param self_Bar 0
+		x_90 = VCall Bar doh
+		SetAttr self_Bar 7 x_90
+		Param self_Bar 0
+		x_91 = VCall Bar printh
+		x_92 = Allocate Int
+		SetAttr x_92 0 x_91
+		SetAttr self_Bar 8 x_92
+		return = self_Bar
+	}
+	main{
+		Local x_95
+		Local x_96
+		Local x_94
+		x_95 = Allocate Main
+		Param x_95 0
+		x_94 = Call initialize_Main
+		Param x_95 0
+		x_96 = Call Main_main
+		halt
+	}

@@ -1,0 +1,206 @@
+Types:
+	Object{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Object:initialize_Object
+	}
+	Int{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Int:initialize_Int
+	}
+	Bool{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Bool:initialize_Bool
+	}
+	IO{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+	}
+	String{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method length:String_length
+		method concat:String_concat
+		method substr:String_substring
+		method initialize_String:initialize_String
+	}
+	Main{
+		attribute i
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method main:Main_main
+		method initialize_Main:initialize_Main
+	}
+	B{
+		attribute x
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method return_x:B_return_x
+		method get_x:B_get_x
+		method initialize_B:initialize_B
+	}
+Data:
+	_vacio=""
+	x_1="This is "OK""
+Code:
+	initialize_Object{
+		Arg instance
+	}
+	initialize_Int{
+		Arg instance
+	}
+	initialize_Bool{
+		Arg instance
+	}
+	initialize_IO{
+		Arg instance
+	}
+	initialize_String{
+		Arg instance
+	}
+	Object_copy{
+		Arg to_copy
+		Local isvoid
+		Local save_copy
+		save_copy = Copy to_copy
+	}
+	Object_abort{
+		Arg self_Object
+		Local isvoid
+		halt
+	}
+	Object_type_name{
+		Arg self_Object
+		Local name
+		Local type_name_ref
+		Local isvoid
+		name = Typeof self_Object
+		type_name_ref = Type_Name name
+	}
+	IO_out_string{
+		Arg out_string
+		Arg self_IO
+		Local isvoid
+		Print out_string
+		out_string = self_IO
+	}
+	IO_out_int{
+		Arg out_int
+		Arg self_IO
+		Local isvoid
+		Print out_int
+		out_int = self_IO
+	}
+	IO_in_string{
+		Arg self_IO
+		Local isvoid
+		Local x_in_string
+		x_in_string = Read
+	}
+	IO_in_int{
+		Arg self_IO
+		Local x_in_int
+		Local isvoid
+		x_in_int = Read
+	}
+	String_length{
+		Arg x_str
+		Local x_str_length
+		Local isvoid
+		x_str_length = Length x_str
+	}
+	String_concat{
+		Arg self_String
+		Arg x_str1
+		Local x_str_concat
+		Local isvoid
+		x_str_concat = Concat x_str1 self_String
+	}
+	String_substring{
+		Arg self_String
+		Arg x_j
+		Arg x_i
+		Local x_sub_str
+		Local isvoid
+		x_sub_str = Substring self_String x_j x_i
+	}
+	Main_main{
+		Arg self_Main
+		Local isvoid
+		Local x_2
+		Local x_3
+		x_2 = Load x_1 -> This is "OK"
+		SetAttr self_Main 0 x_2
+		x_3 = GetAttr self_Main 0
+	}
+	initialize_Main{
+		Arg self_Main
+		Local isvoid
+		Local x_0
+		Local return
+		x_0 = Load _vacio -> 
+		SetAttr self_Main 0 x_0
+		x_0 = Load _vacio -> 
+		return = self_Main
+	}
+	B_return_x{
+		Arg x__5
+		Arg self_B
+		Local isvoid
+		Local x_6
+		Param self_B 0
+		x_6 = VCall B get_x
+	}
+	B_get_x{
+		Arg self_B
+		Local isvoid
+		Local x_7
+		x_7 = GetAttr self_B 0
+	}
+	initialize_B{
+		Arg self_B
+		Local isvoid
+		Local x_4
+		Local return
+		x_4 = 5
+		SetAttr self_B 0 x_4
+		return = self_B
+	}
+	main{
+		Local x_9
+		Local x_10
+		Local x_8
+		x_9 = Allocate Main
+		Param x_9 0
+		x_8 = Call initialize_Main
+		Param x_9 0
+		x_10 = Call Main_main
+		halt
+	}

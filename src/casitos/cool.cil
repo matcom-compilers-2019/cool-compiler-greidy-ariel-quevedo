@@ -1,0 +1,273 @@
+Types:
+	Object{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Object:initialize_Object
+	}
+	Int{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Int:initialize_Int
+	}
+	Bool{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Bool:initialize_Bool
+	}
+	IO{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+	}
+	String{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method length:String_length
+		method concat:String_concat
+		method substr:String_substring
+		method initialize_String:initialize_String
+	}
+	Main{
+		attribute x
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method main:Main_main
+		method initialize_Main:initialize_Main
+	}
+Data:
+	_vacio=""
+	x_30="
+"
+	x_36="while entalla"
+Code:
+	initialize_Object{
+		Arg instance
+	}
+	initialize_Int{
+		Arg instance
+	}
+	initialize_Bool{
+		Arg instance
+	}
+	initialize_IO{
+		Arg instance
+	}
+	initialize_String{
+		Arg instance
+	}
+	Object_copy{
+		Arg to_copy
+		Local isvoid
+		Local save_copy
+		save_copy = Copy to_copy
+	}
+	Object_abort{
+		Arg self_Object
+		Local isvoid
+		halt
+	}
+	Object_type_name{
+		Arg self_Object
+		Local name
+		Local type_name_ref
+		Local isvoid
+		name = Typeof self_Object
+		type_name_ref = Type_Name name
+	}
+	IO_out_string{
+		Arg out_string
+		Arg self_IO
+		Local isvoid
+		Print out_string
+		out_string = self_IO
+	}
+	IO_out_int{
+		Arg out_int
+		Arg self_IO
+		Local isvoid
+		Print out_int
+		out_int = self_IO
+	}
+	IO_in_string{
+		Arg self_IO
+		Local isvoid
+		Local x_in_string
+		x_in_string = Read
+	}
+	IO_in_int{
+		Arg self_IO
+		Local x_in_int
+		Local isvoid
+		x_in_int = Read
+	}
+	String_length{
+		Arg x_str
+		Local x_str_length
+		Local isvoid
+		x_str_length = Length x_str
+	}
+	String_concat{
+		Arg self_String
+		Arg x_str1
+		Local x_str_concat
+		Local isvoid
+		x_str_concat = Concat x_str1 self_String
+	}
+	String_substring{
+		Arg self_String
+		Arg x_j
+		Arg x_i
+		Local x_sub_str
+		Local isvoid
+		x_sub_str = Substring self_String x_j x_i
+	}
+	Main_main{
+		Arg self_Main
+		Local isvoid
+		Local x_1
+		Local x_2
+		Local x_7
+		Local x_5
+		Local x_3
+		Local x_4
+		Local x_6
+		Local x_8
+		Local x_9
+		Local x_10
+		Local x_11
+		Local x_12
+		Local x_13
+		Local x_14
+		Local x_15
+		Local x_21
+		Local x_18
+		Local x_16
+		Local x_17
+		Local x_19
+		Local x_20
+		Local x_22
+		Local x_23
+		Local x_24
+		Local x_25
+		Local x_26
+		Local x_27
+		Local x_28
+		Local x_29
+		Local x_31
+		Local x_32
+		Local x_33
+		Local x_34
+		Local x_35
+		Local x_37
+		Local x_38
+		Local x_39
+		Local x_40
+		Local x_41
+		x_3 = Allocate Object
+		Param x_3 0
+		x_4 = Call initialize_Object
+		x_6 = Typeof x_3
+		Param x_3 0
+		x_5 = VCall x_6 type_name
+		x_9 = Allocate String
+		SetAttr x_9 0 x_5
+		x_8 = Typeof x_9
+		x_11 = 4
+		x_10 = x_11
+		x_13 = 1
+		x_12 = x_13
+		Param x_10 0
+		Param x_12 1
+		Param x_9 2
+		x_7 = VCall x_8 substr
+		x_2 = x_7
+		Param x_2 0
+		Param self_Main 1
+		x_1 = VCall Main out_string
+		x_16 = self_Main
+		x_17 = IsVoid x_16
+		x_20 = Allocate Bool
+		SetAttr x_20 0 x_17
+		x_19 = Typeof x_20
+		Param x_20 0
+		x_18 = VCall x_19 type_name
+		x_23 = Allocate String
+		SetAttr x_23 0 x_18
+		x_22 = Typeof x_23
+		x_25 = 1
+		x_24 = x_25
+		x_27 = 3
+		x_26 = x_27
+		Param x_24 0
+		Param x_26 1
+		Param x_23 2
+		x_21 = VCall x_22 substr
+		x_15 = x_21
+		Param x_15 0
+		Param self_Main 1
+		x_14 = VCall Main out_string
+		x_31 = Load x_30 -> 
+
+		x_29 = x_31
+		Param x_29 0
+		Param self_Main 1
+		x_28 = VCall Main out_string
+		x_32 = GetAttr self_Main 0
+		x_33 = 0
+		x_41 = x_33
+		If x_41 Goto LABEL0
+		x_37 = Load x_36 -> while entalla
+		x_35 = x_37
+		Param x_35 0
+		Param self_Main 1
+		x_34 = VCall Main out_string
+		x_41 = x_34
+		Goto LABEL1
+		LABEL0:
+		x_40 = GetAttr self_Main 0
+		x_39 = x_40
+		Param x_39 0
+		Param self_Main 1
+		x_38 = VCall Main out_string
+		x_41 = x_38
+		LABEL1:
+	}
+	initialize_Main{
+		Arg self_Main
+		Local isvoid
+		Local x_0
+		Local return
+		x_0 = Load _vacio -> 
+		SetAttr self_Main 0 x_0
+		x_0 = Load _vacio -> 
+		return = self_Main
+	}
+	main{
+		Local x_43
+		Local x_44
+		Local x_42
+		x_43 = Allocate Main
+		Param x_43 0
+		x_42 = Call initialize_Main
+		Param x_43 0
+		x_44 = Call Main_main
+		halt
+	}

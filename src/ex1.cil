@@ -1,0 +1,685 @@
+Types:
+	Object{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Object:initialize_Object
+	}
+	Int{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Int:initialize_Int
+	}
+	Bool{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method initialize_Bool:initialize_Bool
+	}
+	IO{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+	}
+	String{
+		attribute value
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method length:String_length
+		method concat:String_concat
+		method substr:String_substring
+		method initialize_String:initialize_String
+	}
+	List{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method isNil:List_isNil
+		method cons:List_cons
+		method car:List_car
+		method cdr:List_cdr
+		method rev:List_rev
+		method sort:List_sort
+		method insert:List_insert
+		method rcons:List_rcons
+		method print_list:List_print_list
+		method initialize_List:initialize_List
+	}
+	Main{
+		attribute l
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method iota:Main_iota
+		method main:Main_main
+		method initialize_Main:initialize_Main
+	}
+	Cons{
+		attribute xcar
+		attribute xcdr
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method isNil:Cons_isNil
+		method cons:List_cons
+		method car:Cons_car
+		method cdr:Cons_cdr
+		method rev:Cons_rev
+		method sort:Cons_sort
+		method insert:Cons_insert
+		method rcons:Cons_rcons
+		method print_list:Cons_print_list
+		method initialize_List:initialize_List
+		method init:Cons_init
+		method initialize_Cons:initialize_Cons
+	}
+	Nil{
+		method copy:Object_copy
+		method abort:Object_abort
+		method type_name:Object_type_name
+		method out_string:IO_out_string
+		method out_int:IO_out_int
+		method in_string:IO_in_string
+		method in_int:IO_in_int
+		method initialize_IO:initialize_IO
+		method isNil:Nil_isNil
+		method cons:List_cons
+		method car:List_car
+		method cdr:List_cdr
+		method rev:Nil_rev
+		method sort:Nil_sort
+		method insert:Nil_insert
+		method rcons:Nil_rcons
+		method print_list:Nil_print_list
+		method initialize_List:initialize_List
+		method initialize_Nil:initialize_Nil
+	}
+Data:
+	_vacio=""
+	x_45="How many numbers to sort?"
+	x_118="
+"
+Code:
+	initialize_Object{
+		Arg instance
+	}
+	initialize_Int{
+		Arg instance
+	}
+	initialize_Bool{
+		Arg instance
+	}
+	initialize_IO{
+		Arg instance
+	}
+	initialize_String{
+		Arg instance
+	}
+	Object_copy{
+		Arg to_copy
+		Local isvoid
+		Local save_copy
+		save_copy = Copy to_copy
+	}
+	Object_abort{
+		Arg self_Object
+		Local isvoid
+		halt
+	}
+	Object_type_name{
+		Arg self_Object
+		Local name
+		Local type_name_ref
+		Local isvoid
+		name = Typeof self_Object
+		type_name_ref = Type_Name name
+	}
+	IO_out_string{
+		Arg out_string
+		Arg self_IO
+		Local isvoid
+		Print out_string
+		out_string = self_IO
+	}
+	IO_out_int{
+		Arg out_int
+		Arg self_IO
+		Local isvoid
+		Print out_int
+		out_int = self_IO
+	}
+	IO_in_string{
+		Arg self_IO
+		Local isvoid
+		Local x_in_string
+		x_in_string = Read
+	}
+	IO_in_int{
+		Arg self_IO
+		Local x_in_int
+		Local isvoid
+		x_in_int = Read
+	}
+	String_length{
+		Arg x_str
+		Local x_str_length
+		Local isvoid
+		x_str_length = Length x_str
+	}
+	String_concat{
+		Arg self_String
+		Arg x_str1
+		Local x_str_concat
+		Local isvoid
+		x_str_concat = Concat x_str1 self_String
+	}
+	String_substring{
+		Arg self_String
+		Arg x_j
+		Arg x_i
+		Local x_sub_str
+		Local isvoid
+		x_sub_str = Substring self_String x_j x_i
+	}
+	List_isNil{
+		Arg self_List
+		Local isvoid
+		Local x_0
+		Local x_1
+		Param self_List 0
+		x_0 = VCall List abort
+		x_1 = 1
+	}
+	List_cons{
+		Arg x__2
+		Arg self_List
+		Local isvoid
+		Local x_3
+		Local x_4
+		Local x__5
+		Local x_6
+		Local x_7
+		Local x_8
+		Local x_9
+		Local x_10
+		x_3 = Allocate Cons
+		Param x_3 0
+		x_4 = Call initialize_Cons
+		x__5 = x_3
+		x_7 = Typeof x__5
+		x_8 = x__2
+		x_10 = self_List
+		x_9 = x_10
+		Param x_8 0
+		Param x_9 1
+		Param x__5 2
+		x_6 = VCall x_7 init
+	}
+	List_car{
+		Arg self_List
+		Local isvoid
+		Local x_11
+		Local x_12
+		Local x_13
+		Param self_List 0
+		x_11 = VCall List abort
+		x_12 = Allocate Int
+		Param x_12 0
+		x_13 = Call initialize_Int
+	}
+	List_cdr{
+		Arg self_List
+		Local isvoid
+		Local x_14
+		Local x_15
+		Local x_16
+		Param self_List 0
+		x_14 = VCall List abort
+		x_15 = Allocate List
+		Param x_15 0
+		x_16 = Call initialize_List
+	}
+	List_rev{
+		Arg self_List
+		Local isvoid
+		Local x_17
+		Param self_List 0
+		x_17 = VCall List cdr
+	}
+	List_sort{
+		Arg self_List
+		Local isvoid
+		Local x_18
+		Param self_List 0
+		x_18 = VCall List cdr
+	}
+	List_insert{
+		Arg x__19
+		Arg self_List
+		Local isvoid
+		Local x_20
+		Param self_List 0
+		x_20 = VCall List cdr
+	}
+	List_rcons{
+		Arg x__21
+		Arg self_List
+		Local isvoid
+		Local x_22
+		Param self_List 0
+		x_22 = VCall List cdr
+	}
+	List_print_list{
+		Arg self_List
+		Local isvoid
+		Local x_23
+		Param self_List 0
+		x_23 = VCall List abort
+	}
+	initialize_List{
+		Arg self_List
+		Local isvoid
+		Local return
+		return = self_List
+	}
+	Main_iota{
+		Arg x__24
+		Arg self_Main
+		Local isvoid
+		Local x_25
+		Local x_26
+		Local x_27
+		Local x__28
+		Local x_29
+		Local x_32
+		Local x_30
+		Local x_31
+		Local x_33
+		Local x_34
+		Local x_35
+		Local x_36
+		Local x_37
+		Local x_38
+		Local x_39
+		Local x__28
+		Local x_41
+		Local x_42
+		x_25 = Allocate Nil
+		Param x_25 0
+		x_26 = Call initialize_Nil
+		SetAttr self_Main 0 x_25
+		x_27 = GetAttr self_Main 0
+		x__28 = 0
+		LABEL0:
+		x_29 = x__28 < x__24
+		x_41 = x_29
+		If x_41 Goto LABEL1
+		x_30 = Allocate Cons
+		Param x_30 0
+		x_31 = Call initialize_Cons
+		x_33 = Typeof x_30
+		x_34 = x__28
+		x_36 = GetAttr self_Main 0
+		x_35 = x_36
+		Param x_34 0
+		Param x_35 1
+		Param x_30 2
+		x_32 = VCall x_33 init
+		SetAttr self_Main 0 x_32
+		x_37 = GetAttr self_Main 0
+		x_38 = 1
+		x_39 = x__28 + x_38
+		x__28 = x_39
+		Goto LABEL0
+		LABEL1:
+		x_42 = GetAttr self_Main 0
+	}
+	Main_main{
+		Arg self_Main
+		Local isvoid
+		Local x_43
+		Local x_44
+		Local x_46
+		Local x_54
+		Local x_52
+		Local x_50
+		Local x_47
+		Local x_48
+		Local x_49
+		Local x_51
+		Local x_53
+		Local x_55
+		x_46 = Load x_45 -> How many numbers to sort?
+		x_44 = x_46
+		Param x_44 0
+		Param self_Main 1
+		x_43 = VCall Main out_string
+		Param self_Main 0
+		x_49 = VCall Main in_int
+		x_48 = x_49
+		Param x_48 0
+		Param self_Main 1
+		x_47 = VCall Main iota
+		x_51 = Typeof x_47
+		Param x_47 0
+		x_50 = VCall x_51 rev
+		x_53 = Typeof x_50
+		Param x_50 0
+		x_52 = VCall x_53 sort
+		x_55 = Typeof x_52
+		Param x_52 0
+		x_54 = VCall x_55 print_list
+	}
+	initialize_Main{
+		Arg self_Main
+		Local isvoid
+		Local return
+		SetAttr self_Main 0 isvoid
+		return = self_Main
+	}
+	Cons_isNil{
+		Arg self_Cons
+		Local isvoid
+		Local x_57
+		x_57 = 0
+	}
+	Cons_init{
+		Arg x__59
+		Arg x__58
+		Arg self_Cons
+		Local isvoid
+		Local x_60
+		Local x_61
+		Local x_62
+		SetAttr self_Cons 0 x__59
+		x_60 = GetAttr self_Cons 0
+		SetAttr self_Cons 1 x__58
+		x_61 = GetAttr self_Cons 1
+		x_62 = self_Cons
+	}
+	Cons_car{
+		Arg self_Cons
+		Local isvoid
+		Local x_63
+		x_63 = GetAttr self_Cons 0
+	}
+	Cons_cdr{
+		Arg self_Cons
+		Local isvoid
+		Local x_64
+		x_64 = GetAttr self_Cons 1
+	}
+	Cons_rev{
+		Arg self_Cons
+		Local isvoid
+		Local x_68
+		Local x_66
+		Local x_65
+		Local x_67
+		Local x_69
+		Local x_70
+		Local x_71
+		x_65 = GetAttr self_Cons 1
+		x_67 = Typeof x_65
+		Param x_65 0
+		x_66 = VCall x_67 rev
+		x_69 = Typeof x_66
+		x_71 = GetAttr self_Cons 0
+		x_70 = x_71
+		Param x_70 0
+		Param x_66 1
+		x_68 = VCall x_69 rcons
+	}
+	Cons_sort{
+		Arg self_Cons
+		Local isvoid
+		Local x_75
+		Local x_73
+		Local x_72
+		Local x_74
+		Local x_76
+		Local x_77
+		Local x_78
+		x_72 = GetAttr self_Cons 1
+		x_74 = Typeof x_72
+		Param x_72 0
+		x_73 = VCall x_74 sort
+		x_76 = Typeof x_73
+		x_78 = GetAttr self_Cons 0
+		x_77 = x_78
+		Param x_77 0
+		Param x_73 1
+		x_75 = VCall x_76 insert
+	}
+	Cons_insert{
+		Arg x__79
+		Arg self_Cons
+		Local isvoid
+		Local x_80
+		Local x_81
+		Local x_84
+		Local x_82
+		Local x_83
+		Local x_85
+		Local x_86
+		Local x_87
+		Local x_88
+		Local x_91
+		Local x_89
+		Local x_90
+		Local x_92
+		Local x_93
+		Local x_94
+		Local x_95
+		Local x_97
+		Local x_96
+		Local x_98
+		Local x_99
+		Local x_100
+		x_80 = GetAttr self_Cons 0
+		x_81 = x__79 < x_80
+		x_100 = x_81
+		If x_100 Goto LABEL2
+		x_82 = Allocate Cons
+		Param x_82 0
+		x_83 = Call initialize_Cons
+		x_85 = Typeof x_82
+		x_86 = x__79
+		x_88 = self_Cons
+		x_87 = x_88
+		Param x_86 0
+		Param x_87 1
+		Param x_82 2
+		x_84 = VCall x_85 init
+		x_100 = x_84
+		Goto LABEL3
+		LABEL2:
+		x_89 = Allocate Cons
+		Param x_89 0
+		x_90 = Call initialize_Cons
+		x_92 = Typeof x_89
+		x_94 = GetAttr self_Cons 0
+		x_93 = x_94
+		x_96 = GetAttr self_Cons 1
+		x_98 = Typeof x_96
+		x_99 = x__79
+		Param x_99 0
+		Param x_96 1
+		x_97 = VCall x_98 insert
+		x_95 = x_97
+		Param x_93 0
+		Param x_95 1
+		Param x_89 2
+		x_91 = VCall x_92 init
+		x_100 = x_91
+		LABEL3:
+	}
+	Cons_rcons{
+		Arg x__101
+		Arg self_Cons
+		Local isvoid
+		Local x_104
+		Local x_102
+		Local x_103
+		Local x_105
+		Local x_106
+		Local x_107
+		Local x_108
+		Local x_110
+		Local x_109
+		Local x_111
+		Local x_112
+		x_102 = Allocate Cons
+		Param x_102 0
+		x_103 = Call initialize_Cons
+		x_105 = Typeof x_102
+		x_107 = GetAttr self_Cons 0
+		x_106 = x_107
+		x_109 = GetAttr self_Cons 1
+		x_111 = Typeof x_109
+		x_112 = x__101
+		Param x_112 0
+		Param x_109 1
+		x_110 = VCall x_111 rcons
+		x_108 = x_110
+		Param x_106 0
+		Param x_108 1
+		Param x_102 2
+		x_104 = VCall x_105 init
+	}
+	Cons_print_list{
+		Arg self_Cons
+		Local isvoid
+		Local x_113
+		Local x_114
+		Local x_115
+		Local x_116
+		Local x_117
+		Local x_119
+		Local x_121
+		Local x_120
+		Local x_122
+		x_115 = GetAttr self_Cons 0
+		x_114 = x_115
+		Param x_114 0
+		Param self_Cons 1
+		x_113 = VCall Cons out_int
+		x_119 = Load x_118 -> 
+
+		x_117 = x_119
+		Param x_117 0
+		Param self_Cons 1
+		x_116 = VCall Cons out_string
+		x_120 = GetAttr self_Cons 1
+		x_122 = Typeof x_120
+		Param x_120 0
+		x_121 = VCall x_122 print_list
+	}
+	initialize_Cons{
+		Arg self_Cons
+		Local isvoid
+		Local x_56
+		Local return
+		SetAttr self_Cons 0 x_56
+		SetAttr self_Cons 1 isvoid
+		return = self_Cons
+	}
+	Nil_isNil{
+		Arg self_Nil
+		Local isvoid
+		Local x_123
+		x_123 = 1
+	}
+	Nil_rev{
+		Arg self_Nil
+		Local isvoid
+		Local x_124
+		x_124 = self_Nil
+	}
+	Nil_sort{
+		Arg self_Nil
+		Local isvoid
+		Local x_125
+		x_125 = self_Nil
+	}
+	Nil_insert{
+		Arg x__126
+		Arg self_Nil
+		Local isvoid
+		Local x_127
+		Local x_128
+		x_128 = x__126
+		Param x_128 0
+		Param self_Nil 1
+		x_127 = VCall Nil rcons
+	}
+	Nil_rcons{
+		Arg x__129
+		Arg self_Nil
+		Local isvoid
+		Local x_132
+		Local x_130
+		Local x_131
+		Local x_133
+		Local x_134
+		Local x_135
+		Local x_136
+		x_130 = Allocate Cons
+		Param x_130 0
+		x_131 = Call initialize_Cons
+		x_133 = Typeof x_130
+		x_134 = x__129
+		x_136 = self_Nil
+		x_135 = x_136
+		Param x_134 0
+		Param x_135 1
+		Param x_130 2
+		x_132 = VCall x_133 init
+	}
+	Nil_print_list{
+		Arg self_Nil
+		Local isvoid
+		Local x_137
+		x_137 = 1
+	}
+	initialize_Nil{
+		Arg self_Nil
+		Local isvoid
+		Local return
+		return = self_Nil
+	}
+	main{
+		Local x_139
+		Local x_140
+		Local x_138
+		x_139 = Allocate Main
+		Param x_139 0
+		x_138 = Call initialize_Main
+		Param x_139 0
+		x_140 = Call Main_main
+		halt
+	}
