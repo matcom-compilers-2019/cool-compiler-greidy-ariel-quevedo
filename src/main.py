@@ -13,7 +13,7 @@ import sys
 
 def run(temp, fd = "1", i = 1):
     try:
-        camino = os.getcwd() + "\\"
+        camino = os.getcwd() + "/"
         print("COOL Compiler version:3021.4")
         print("COOL Compiler copyright c")
         with open(camino+temp,"r") as fd_read:
